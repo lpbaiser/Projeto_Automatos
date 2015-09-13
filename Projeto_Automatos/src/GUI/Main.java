@@ -13,7 +13,7 @@ public class Main {
     
     public static void main(String[] args) {
         GUI telaInical = new GUI();
-        telaInical.setVisible(true);
+         
         
     }
     

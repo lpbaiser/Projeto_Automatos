@@ -6,9 +6,11 @@
 package GUI;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Label;
 import java.awt.event.WindowEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -24,16 +26,19 @@ public class GUI extends JFrame{
     
     Container cp = new Container(); // container principal, nele serão adicionados os paineis
     
-    JPanel painelCentro = new JPanel(); /// painel centro, nele serão add os componentes
-    JPanel painelSul = new JPanel(); /// painel centro, nele serão add os componentes
+    private JPanel painelCentro = new JPanel(); /// painel centro, nele serão add os componentes
+    private JPanel painelSul = new JPanel(); /// painel centro, nele serão add os componentes
     
     //Componentes
-    JButton btnAbrir = new JButton("Carregar");
-    JTextField txtCaminho = new JTextField(30);
+    ImageIcon iconeAbrir = new ImageIcon(getClass().getResource("/icones/folder_open.png"));
+    private JButton btnAbrir = new JButton(iconeAbrir);
+    private JTextField txtCaminho = new JTextField(30);
+    private String caminho = "";
     //--
     
     public GUI(){
         setSize(500, 300);//tamanho inicial da tela
+        setBackground(Color.CYAN);//cor do fundo da janela
         
         cp = getContentPane(); // vincula o layout do frame com o componente cp -- para ficar mais facil controlar
         
