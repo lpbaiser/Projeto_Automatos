@@ -5,8 +5,16 @@
  */
 package GUI;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Label;
+import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
 /**
  *
@@ -14,10 +22,35 @@ import javax.swing.JFrame;
  */
 public class GUI extends JFrame{
     
-    JButton btnAbrir = new JButton("Abrir");
+    Container cp = new Container(); // container principal, nele serão adicionados os paineis
     
+    JPanel painelCentro = new JPanel(); /// painel centro, nele serão add os componentes
+    JPanel painelSul = new JPanel(); /// painel centro, nele serão add os componentes
+    
+    //Componentes
+    JButton btnAbrir = new JButton("Carregar");
+    JTextField txtCaminho = new JTextField(30);
+    //--
     
     public GUI(){
+        setSize(500, 300);//tamanho inicial da tela
+        
+        cp = getContentPane(); // vincula o layout do frame com o componente cp -- para ficar mais facil controlar
+        
+        cp.setLayout(new BorderLayout()); // define o tipo de layout -- este é de 5 posiçoes - norte, sul, leste, oeste e centro
+        
+        painelCentro.add(new JLabel("Caminho: "));
+        painelCentro.add(txtCaminho);
+        painelCentro.add(btnAbrir);
+        
+        painelSul.add(new JLabel("Clique em \"Carregar\" para carregar um novo arquivo!"));
+        
+        cp.add(painelCentro, BorderLayout.CENTER);
+        cp.add(painelSul, BorderLayout.SOUTH);
+    
+        setVisible(true); // deixa visivel o Frame
+        setLocationRelativeTo(null); // posiciona o Frame no centro da tela
+        
         
     }
     
