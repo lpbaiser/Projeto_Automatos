@@ -114,7 +114,12 @@ public class GUI extends JFrame {
                     //chama o método que ira tratar as strings e validar os dados!
                     //esse método deve retornar se o automato é valido(true) ou inválido(false)
                     mani m = new mani();
-                    m.manipula(texto);
+                    boolean t = m.integracao(texto, txtTransicoes.getText());
+                    if (t){
+                        JOptionPane.showMessageDialog(rootPane, "Trancições validas!");
+                    }else{
+                        JOptionPane.showMessageDialog(rootPane, "Trancições invalidas!");
+                    }
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Abra um arquivo primeiro antes de executar o teste!");
                 }
