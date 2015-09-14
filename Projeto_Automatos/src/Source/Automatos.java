@@ -16,15 +16,16 @@ public class Automatos {
     private String[] estados;
     private String iniciais;
     private String[] finais;
-    private String[] transicao;
+    private Transicao transicao;
 
-    public String[] getTransicao() {
+    public Transicao getTransicao() {
         return transicao;
     }
 
-    public void setTransicao(String[] transicao) {
+    public void setTransicao(Transicao transicao) {
         this.transicao = transicao;
     }
+
 
     public String[] getAlfabeto() {
         return alfabeto;

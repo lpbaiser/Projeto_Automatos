@@ -14,7 +14,15 @@ import java.util.List;
  * @author emanuel;1136844
  */
 public class mani {
-   public boolean manipula(List<String> arq){
+    
+    public void integracao(List<String> txt,String trans){
+        Automatos aut=new Automatos();
+       aut= manipula(txt);
+        validar(aut,aut.getTransicao(),trans);
+        
+    }
+    
+   public Automatos manipula(List<String> arq){
        int aux=0;
        Transicao t=new Transicao();
        //String[] nova=arq.split("\n");
@@ -29,19 +37,20 @@ public class mani {
            //t.setEstado1()[i]; Setters em matrizes?
            i++;
            aux++;
-       }       
-       return true;
+       }
+       aut.setTransicao(t);
+       return aut;
    }
    
    public String[] getTransicoes(String trans){
-       int i=0;
        String[] transicao= trans.split("-");
        return transicao;
    }
    
-   public boolean validar(Automatos aut,Transicao t,String[] transicao){
+   public boolean validar(Automatos aut,Transicao t,String transicoes){
        int aux=0;
        int i=0;
+       String[] transicao=getTransicoes(transicoes);
        while(i<t.estado1.length){
            if(aut.getIniciais().equals(t.estado1[i][0])){
                if(transicao[aux].equals(t.estado1[i][1])){
