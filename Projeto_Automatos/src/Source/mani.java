@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author emanuel
+ * @author emanuel;1136844
  */
 public class mani {
    public boolean manipula(List<String> arq){
@@ -46,6 +46,13 @@ public class mani {
            }
            i++;
        }
-       return aut.getIniciais().equals(aut.getFinais());
+       i=0;
+       while(i<aut.getFinais().length){
+            if (aut.getIniciais().equals(aut.getFinais()[i])){
+                return true;
+            }
+           
+       }
+       return false;
    }
 }
