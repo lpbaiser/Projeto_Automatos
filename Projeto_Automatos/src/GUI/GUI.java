@@ -111,7 +111,7 @@ public class GUI extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                caminho = "/icones/Exemplo.txt";
+                
                 if (!caminho.equals("") && !txtTransicoes.getText().isEmpty()){
                     //chama o método que ira tratar as strings e validar os dados!
                     //esse método deve retornar se o automato é valido(true) ou inválido(false)
