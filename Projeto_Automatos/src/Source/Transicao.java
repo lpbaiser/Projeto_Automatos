@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class Transicao {
    String[][] estado1;
   private String[] trans;
-  private String[] estado3;
 
     public String[][] getEstado1() {
         return estado1;
@@ -30,14 +29,6 @@ public class Transicao {
 
     public void setTrans(String[] trans) {
         this.trans = trans;
-    }
-
-    public String[] getEstado3() {
-        return estado3;
-    }
-
-    public void setEstado3(String[] estado3) {
-        this.estado3 = estado3;
     }
 
    

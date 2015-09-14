@@ -14,8 +14,17 @@ import java.util.ArrayList;
 public class Automatos {
     private String[] alfabeto;
     private String[] estados;
-    private String[] iniciais;
+    private String iniciais;
     private String[] finais;
+    private String[] transicao;
+
+    public String[] getTransicao() {
+        return transicao;
+    }
+
+    public void setTransicao(String[] transicao) {
+        this.transicao = transicao;
+    }
 
     public String[] getAlfabeto() {
         return alfabeto;
@@ -33,11 +42,11 @@ public class Automatos {
         this.estados = estados;
     }
 
-    public String[] getIniciais() {
+    public String getIniciais() {
         return iniciais;
     }
 
-    public void setIniciais(String[] iniciais) {
+    public void setIniciais(String iniciais) {
         this.iniciais = iniciais;
     }
 

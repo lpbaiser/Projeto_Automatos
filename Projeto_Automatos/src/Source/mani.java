@@ -22,7 +22,7 @@ public class mani {
        Automatos aut=new Automatos();
        aut.setAlfabeto(nova[0].split(" "));
        aut.setEstados(nova[1].split(" "));
-       aut.setIniciais(nova[2].split(" "));
+       aut.setIniciais(nova[2]);
        aut.setFinais(nova[3].split(" "));
        int i=4;
        while(i<nova.length){
@@ -32,14 +32,18 @@ public class mani {
            aux++;
        }
        while(i<t.estado1.length){
-           if(aut.getIniciais().equals(t.getEstado1()[i])){
-               
+           if(aut.getIniciais().equals(t.estado1[i][0])){
+               if(aut.getTransicao()[aux].equals(t.estado1[i][1])){
+                   aut.setIniciais(t.estado1[i][2]);
+                   aux++;
+               }
            }
+           i++;
        }
        
        
        
-       
+       return true;
        
    }
    
