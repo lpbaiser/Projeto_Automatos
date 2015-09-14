@@ -5,47 +5,54 @@
  */
 package Source;
 
-import java.io.FileReader;
-import java.io.LineNumberReader;
+import java.util.List;
+
+
 
 /**
  *
- * @author emanuel
+ * @author emanuel;1136844
  */
 public class mani {
-   public boolean manipula(String arq){
-       //LineNumberReader qtlinha=new LineNumberReader(new FileReader(arq)); quantidade de linhas pesquisar
+   public boolean manipula(List<String> arq){
        int aux=0;
        Transicao t=new Transicao();
-       String[] nova= new String [100];
-       nova=arq.split("\n");
+       //String[] nova=arq.split("\n");
        Automatos aut=new Automatos();
-       aut.setAlfabeto(nova[0].split(" "));
-       aut.setEstados(nova[1].split(" "));
-       aut.setIniciais(nova[2]);
-       aut.setFinais(nova[3].split(" "));
+       aut.setAlfabeto(arq.get(0).split(" "));
+       aut.setEstados(arq.get(1).split(" "));
+       aut.setIniciais(arq.get(2));
+       aut.setFinais(arq.get(3).split(" "));
        int i=4;
-       while(i<nova.length){
-           t.estado1[aux]=(nova[i].split(" "));
+       while(i<arq.size()){
+           t.estado1[aux]=(arq.get(i).split(" "));
            //t.setEstado1()[i]; Setters em matrizes?
            i++;
            aux++;
-       }
+       }       
+       return true;
+   }
+   
+   public boolean validar(Automatos aut,Transicao t){
+       int aux=0;
+       int i=0;
        while(i<t.estado1.length){
            if(aut.getIniciais().equals(t.estado1[i][0])){
                if(aut.getTransicao()[aux].equals(t.estado1[i][1])){
                    aut.setIniciais(t.estado1[i][2]);
                    aux++;
                }
+               
            }
            i++;
        }
-       
-       
-       
-       return true;
-       
+       i=0;
+       while(i<aut.getFinais().length){
+            if (aut.getIniciais().equals(aut.getFinais()[i])){
+                return true;
+            }
+           
+       }
+       return false;
    }
-   
-    
 }
