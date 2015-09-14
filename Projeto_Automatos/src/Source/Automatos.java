@@ -12,41 +12,42 @@ import java.util.ArrayList;
  * @author emanuel
  */
 public class Automatos {
-    private ArrayList<String> alfabeto;
-    private ArrayList<String> estados;
-    private ArrayList<String> iniciais;
-    private ArrayList<String> finais;
+    private String[] alfabeto;
+    private String[] estados;
+    private String[] iniciais;
+    private String[] finais;
 
-    public ArrayList<String> getAlfabeto() {
+    public String[] getAlfabeto() {
         return alfabeto;
     }
 
-    public void setAlfabeto(ArrayList<String> alfabeto) {
+    public void setAlfabeto(String[] alfabeto) {
         this.alfabeto = alfabeto;
     }
 
-    public ArrayList<String> getEstados() {
+    public String[] getEstados() {
         return estados;
     }
 
-    public void setEstados(ArrayList<String> estados) {
+    public void setEstados(String[] estados) {
         this.estados = estados;
     }
 
-    public ArrayList<String> getIniciais() {
+    public String[] getIniciais() {
         return iniciais;
     }
 
-    public void setIniciais(ArrayList<String> iniciais) {
+    public void setIniciais(String[] iniciais) {
         this.iniciais = iniciais;
     }
 
-    public ArrayList<String> getFinais() {
+    public String[] getFinais() {
         return finais;
     }
 
-    public void setFinais(ArrayList<String> finais) {
+    public void setFinais(String[] finais) {
         this.finais = finais;
     }
+
     
 }
