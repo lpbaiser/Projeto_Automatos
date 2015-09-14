@@ -66,6 +66,7 @@ public class GUI extends JFrame {
         painelCentro.add(btnAbrir);
         painelCentro.add(btnExecutar);
         painelCentro.add(new JLabel("Trancições: "));
+        txtTransicoes.setText("0-0-1");
         painelCentro.add(txtTransicoes);
 
 //        painelSul.add(new JLabel("Clique em \"Carregar\" para carregar um novo arquivo!"));
@@ -110,6 +111,7 @@ public class GUI extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                caminho = "/icones/Exemplo.txt";
                 if (!caminho.equals("") && !txtTransicoes.getText().isEmpty()){
                     //chama o método que ira tratar as strings e validar os dados!
                     //esse método deve retornar se o automato é valido(true) ou inválido(false)
