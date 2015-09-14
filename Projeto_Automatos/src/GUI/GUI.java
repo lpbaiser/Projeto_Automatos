@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import Source.mani;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -43,14 +44,16 @@ public class GUI extends JFrame {
     ImageIcon iconeCheck = new ImageIcon(getClass().getResource("/icones/check.png"));
     private JButton btnAbrir = new JButton(iconeAbrir);
     private JButton btnExecutar = new JButton(iconeCheck);
-    private JTextField txtCaminho = new JTextField(30);
     private JTextArea txtArquivo = new JTextArea();
+    private JTextField txtCaminho = new JTextField(30);
+    private JTextField txtTransicoes = new JTextField(30);
     private String caminho = "";
+    List<String> texto;
     //--
 
     public GUI() {
         setTitle("Validação de  Automatos");
-        setSize(500, 300);//tamanho inicial da tela
+        setSize(600, 300);//tamanho inicial da tela
         setBackground(Color.CYAN);//cor do fundo da janela
         
 
@@ -62,7 +65,8 @@ public class GUI extends JFrame {
         painelCentro.add(txtCaminho);
         painelCentro.add(btnAbrir);
         painelCentro.add(btnExecutar);
-        painelCentro.add(txtArquivo);
+        painelCentro.add(new JLabel("Trancições: "));
+        painelCentro.add(txtTransicoes);
 
 //        painelSul.add(new JLabel("Clique em \"Carregar\" para carregar um novo arquivo!"));
 
@@ -91,7 +95,6 @@ public class GUI extends JFrame {
                 if (caixaDeDialogo.showOpenDialog(new JPanel()) == JFileChooser.APPROVE_OPTION) {
                     caminho = caixaDeDialogo.getSelectedFile().getAbsolutePath(); //get o caminho do arquivo
                     ManipulaArquivo arq = new ManipulaArquivo();
-                    List<String> texto;
                     texto = arq.abrirArquivo(caminho);
 //                    txtArquivo.setText("");
 //                    for (int i = 0; i < texto.size(); i++) {
@@ -110,6 +113,8 @@ public class GUI extends JFrame {
                 if (!caminho.equals("")){
                     //chama o método que ira tratar as strings e validar os dados!
                     //esse método deve retornar se o automato é valido(true) ou inválido(false)
+                    mani m = new mani();
+//                    m.manipula(texto);
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Abra um arquivo primeiro antes de executar o teste!");
                 }
