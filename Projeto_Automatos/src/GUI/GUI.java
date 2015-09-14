@@ -110,11 +110,11 @@ public class GUI extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!caminho.equals("")){
+                if (!caminho.equals("") && !txtTransicoes.getText().isEmpty()){
                     //chama o método que ira tratar as strings e validar os dados!
                     //esse método deve retornar se o automato é valido(true) ou inválido(false)
                     mani m = new mani();
-//                    m.manipula(texto);
+                    m.manipula(texto);
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Abra um arquivo primeiro antes de executar o teste!");
                 }
