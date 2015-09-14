@@ -33,12 +33,18 @@ public class mani {
        return true;
    }
    
-   public boolean validar(Automatos aut,Transicao t){
+   public String[] getTransicoes(String trans){
+       int i=0;
+       String[] transicao= trans.split("-");
+       return transicao;
+   }
+   
+   public boolean validar(Automatos aut,Transicao t,String[] transicao){
        int aux=0;
        int i=0;
        while(i<t.estado1.length){
            if(aut.getIniciais().equals(t.estado1[i][0])){
-               if(aut.getTransicao()[aux].equals(t.estado1[i][1])){
+               if(transicao[aux].equals(t.estado1[i][1])){
                    aut.setIniciais(t.estado1[i][2]);
                    aux++;
                }
