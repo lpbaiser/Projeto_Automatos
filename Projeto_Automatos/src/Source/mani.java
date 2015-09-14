@@ -15,10 +15,10 @@ import java.util.List;
  */
 public class mani {
     
-    public void integracao(List<String> txt,String trans){
+    public boolean integracao(List<String> txt,String trans){
         Automatos aut=new Automatos();
        aut= manipula(txt);
-        validar(aut,aut.getTransicao(),trans);
+        return validar(aut,aut.getTransicao(),trans);
         
     }
     
