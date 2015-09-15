@@ -118,7 +118,7 @@ public class GUI extends JFrame {
                     mani m = new mani();
                     boolean t = m.integracao(texto, txtPalavra.getText());
                     if (t){
-                        JOptionPane.showMessageDialog(rootPane, "Trancições validas!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(rootPane, "Trancições validas!", "Sucesso", 0, iconeCheck);
                     }else{
                         JOptionPane.showMessageDialog(rootPane, "Trancições invalidas!", "Erro", JOptionPane.ERROR_MESSAGE);
                     }
