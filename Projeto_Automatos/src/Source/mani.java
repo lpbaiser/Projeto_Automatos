@@ -61,6 +61,7 @@ public class mani {
     public boolean validar(Automatos aut, Transicao t, String transicoes) {
         int aux = 0;
         int i = 0;
+        boolean flag=true;
         String[] transicao = getTransicoes(transicoes);
         while (aux < transicao.length && i < t.estado1.size()) {
             if (aut.getIniciais().equals(t.estado1.get(i).get(0))) {
@@ -70,13 +71,16 @@ public class mani {
                     }
                     aut.setIniciais(t.estado1.get(i).get(2));
                     aux++;
+                    flag=true;
+                }else{
+                    flag=false;
                 }
             }
             i++;
         }
         i = 0;
         while (i < aut.getFinais().length) {
-            if (aut.getIniciais().equals(aut.getFinais()[i])) {
+            if (aut.getIniciais().equals(aut.getFinais()[i])&& flag==true) {
                 return true;
             }
             i++;
