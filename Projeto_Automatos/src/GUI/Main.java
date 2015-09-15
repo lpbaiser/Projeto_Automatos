@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import Source.mani;
+import java.util.List;
+
 /**
  *
  * @author leonardo
@@ -12,7 +15,16 @@ package GUI;
 public class Main {
     
     public static void main(String[] args) {
-        GUI telaInical = new GUI();
+//        GUI telaInical = new GUI();
+        
+        ManipulaArquivo arq = new ManipulaArquivo();
+        String caminho = "/icones/Exemplo.txt";
+                    List<String> texto = arq.abrirArquivo(caminho);
+                    
+        mani m = new mani();
+        m.integracao(texto, "0-0-1");
+                    
+        
          
         
     }
