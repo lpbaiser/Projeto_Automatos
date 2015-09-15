@@ -6,22 +6,24 @@
 package Source;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author emanuel
  */
 public class Transicao {
-   String[][] estado1;
+   ArrayList<ArrayList<String>> estado1;
   private String[] trans;
 
-    public String[][] getEstado1() {
+    public ArrayList<ArrayList<String>> getEstado1() {
         return estado1;
     }
 
-    public void setEstado1(String[][] estado1) {
+    public void setEstado1(ArrayList<ArrayList<String>> estado1) {
         this.estado1 = estado1;
     }
+
 
     public String[] getTrans() {
         return trans;
