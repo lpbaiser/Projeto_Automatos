@@ -18,7 +18,7 @@ public class Main {
 //        GUI telaInical = new GUI();
         
         ManipulaArquivo arq = new ManipulaArquivo();
-        String caminho = "/icones/Exemplo.txt";
+        String caminho = "/data/BCC/4 Periodo/Automatos/Exemplo.txt";
                     List<String> texto = arq.abrirArquivo(caminho);
                     
         mani m = new mani();
