@@ -25,7 +25,7 @@ public class mani {
 
     // Metodo que manipula a String e à prepara para a validação
 
-    public Automatos manipula(List<String> arq) {
+    private Automatos manipula(List<String> arq) {
 
         Transicao t = new Transicao();
         t.estado1 = new ArrayList<>();
@@ -58,7 +58,7 @@ public class mani {
 
     //metodo que compara todos as transições e estados do automato.
 
-    public boolean validar(Automatos aut, Transicao t, String palavra) {
+    private boolean validar(Automatos aut, Transicao t, String palavra) {
         int aux = 0;
         int i = 0;
         boolean flag=true;
