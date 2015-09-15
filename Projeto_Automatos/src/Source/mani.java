@@ -62,7 +62,8 @@ public class mani {
         int aux = 0;
         int i = 0;
         String[] transicao = getTransicoes(transicoes);
-        while (aux < transicao.length && i < t.estado1.size()) {
+        while (aux < transicao.length) {
+            System.out.println("iiii"+i);
             if (aut.getIniciais().equals(t.estado1.get(i).get(0))) {
                 if (transicao[aux].equals(t.estado1.get(i).get(1))) {
                     if ((aut.getIniciais().equals(t.estado1.get(i).get(2)))) {
