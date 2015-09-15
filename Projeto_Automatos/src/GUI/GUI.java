@@ -46,14 +46,14 @@ public class GUI extends JFrame {
     private JButton btnExecutar = new JButton(iconeCheck);
     private JTextArea txtArquivo = new JTextArea();
     private JTextField txtCaminho = new JTextField(30);
-    private JTextField txtTransicoes = new JTextField(30);
+    private JTextField txtPalavra = new JTextField(30);
     private String caminho = "";
     List<String> texto;
     //--
 
     public GUI() {
         setTitle("Validação de  Automatos");
-        setSize(600, 300);//tamanho inicial da tela
+        setSize(600, 200);//tamanho inicial da tela
         setBackground(Color.CYAN);//cor do fundo da janela
         
 
@@ -65,9 +65,9 @@ public class GUI extends JFrame {
         painelCentro.add(txtCaminho);
         painelCentro.add(btnAbrir);
         painelCentro.add(btnExecutar);
-        painelCentro.add(new JLabel("Trancições: "));
-        txtTransicoes.setText("0-0-1");
-        painelCentro.add(txtTransicoes);
+        painelCentro.add(new JLabel("Palavra: "));
+        txtPalavra.setText("");
+        painelCentro.add(txtPalavra);
 
 //        painelSul.add(new JLabel("Clique em \"Carregar\" para carregar um novo arquivo!"));
 
@@ -112,18 +112,18 @@ public class GUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                if (!caminho.equals("") && !txtTransicoes.getText().isEmpty()){
+                if (!caminho.equals("") && !txtPalavra.getText().isEmpty()){
                     //chama o método que ira tratar as strings e validar os dados!
                     //esse método deve retornar se o automato é valido(true) ou inválido(false)
                     mani m = new mani();
-                    boolean t = m.integracao(texto, txtTransicoes.getText());
+                    boolean t = m.integracao(texto, txtPalavra.getText());
                     if (t){
-                        JOptionPane.showMessageDialog(rootPane, "Trancições validas!");
+                        JOptionPane.showMessageDialog(rootPane, "Trancições validas!", "Sucesso", JOptionPane.OK_OPTION);
                     }else{
-                        JOptionPane.showMessageDialog(rootPane, "Trancições invalidas!");
+                        JOptionPane.showMessageDialog(rootPane, "Trancições invalidas!", "Erro", JOptionPane.ERROR_MESSAGE);
                     }
                 }else{
-                    JOptionPane.showMessageDialog(rootPane, "Abra um arquivo primeiro antes de executar o teste!");
+                    JOptionPane.showMessageDialog(rootPane, "Abra um arquivo primeiro antes de executar o teste!", "Atenção", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
