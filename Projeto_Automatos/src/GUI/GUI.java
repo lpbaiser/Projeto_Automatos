@@ -118,9 +118,9 @@ public class GUI extends JFrame {
                     mani m = new mani();
                     boolean t = m.integracao(texto, txtPalavra.getText());
                     if (t){
-                        JOptionPane.showMessageDialog(rootPane, "Trancições validas!", "Sucesso", 0, iconeCheck);
+                        JOptionPane.showMessageDialog(rootPane, "Palavra validas!", "Sucesso", 0, iconeCheck);
                     }else{
-                        JOptionPane.showMessageDialog(rootPane, "Trancições invalidas!", "Erro", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(rootPane, "Palavra invalida!", "Erro", JOptionPane.ERROR_MESSAGE);
                     }
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Abra um arquivo primeiro antes de executar o teste!", "Atenção", JOptionPane.WARNING_MESSAGE);
