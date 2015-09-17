@@ -15,7 +15,6 @@ import java.util.List;
 public class mani {
 
     //Metodo que chama os metodos, e retorna a se as transicoes sao aceitas.
-
     public boolean integracao(List<String> txt, String trans) {
         Automatos aut = new Automatos();
         aut = manipula(txt);
@@ -24,7 +23,6 @@ public class mani {
     }
 
     // Metodo que manipula a String e à prepara para a validação
-
     private Automatos manipula(List<String> arq) {
 
         Transicao t = new Transicao();
@@ -49,39 +47,41 @@ public class mani {
     }
 
     //Metodo que Recebe o arquivo de transicoes e o manipula para validação
-
 //    public String[] getTransicoes(String trans) {
 //        String[] transicao = trans.split("-");
 //
 //        return transicao;
 //    }
-
     //metodo que compara todos as transições e estados do automato.
-
     private boolean validar(Automatos aut, Transicao t, String palavra) {
         int aux = 0;
         int i = 0;
-        boolean flag=true;
+        boolean flag = false;
 //        String[] transicao = getTransicoes(transicoes); 001
-        while (aux < palavra.length() && i < t.estado1.size()) {
-            if (aut.getIniciais().equals(t.estado1.get(i).get(0))) {
-               
-                if (((palavra.charAt(aux))==((t.estado1.get(i).get(1).charAt(0))))||palavra.charAt(aux)=='b') {
-                    if ((aut.getIniciais().equals(t.estado1.get(i).get(2)))) {
-                        i--;
+        int aux2 = aux;
+            while (aux < palavra.length() && i < t.estado1.size()) {
+                if (aut.getIniciais().equals(t.estado1.get(i).get(0))) {
+             //   System.out.println(t.estado1.get(i).get(0));
+
+                    if (((palavra.charAt(aux)) == ((t.estado1.get(i).get(1).charAt(0)))) || palavra.charAt(aux) == 'b') {
+                        if ((aut.getIniciais().equals(t.estado1.get(i).get(2)))) {
+                            aut.setIniciais(t.estado1.get(i).get(2));
+                            i--;
+                        } else {
+                            //gambiarra
+                            aut.setIniciais(t.estado1.get(i).get(2));
+                        }
+                        aux++;
+                        flag = true;
+                    } else {
+                        flag = false;
                     }
-                    aut.setIniciais(t.estado1.get(i).get(2));
-                    aux++;
-                    flag=true;
-                }else{
-                    flag=false;
                 }
+                i++;
             }
-            i++;
-        }
         i = 0;
         while (i < aut.getFinais().length) {
-            if (aut.getIniciais().equals(aut.getFinais()[i])&& flag==true) {
+            if (aut.getIniciais().equals(aut.getFinais()[i]) && flag == true) {
                 return true;
             }
             i++;
