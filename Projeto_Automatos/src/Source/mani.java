@@ -59,16 +59,15 @@ public class mani {
         boolean flag = false;
 //        String[] transicao = getTransicoes(transicoes); 001
         int aux2 = aux;
-            while (aux < palavra.length() && i < t.estado1.size()) {
-                if (aut.getIniciais().equals(t.estado1.get(i).get(0))) {
-             //   System.out.println(t.estado1.get(i).get(0));
+            while (aux < palavra.length() && i < t.estado1.size()) {//equanto tiver simbolo do alfabeto para consumir e estados do automato
+                if (aut.getIniciais().equals(t.estado1.get(i).get(0))) {//verifica se este simbolo pertence ao estado  
 
-                    if (((palavra.charAt(aux)) == ((t.estado1.get(i).get(1).charAt(0)))) || palavra.charAt(aux) == 'b') {
+                    if (((palavra.charAt(aux)) == ((t.estado1.get(i).get(1).charAt(0)))) || palavra.charAt(aux) == 'b') {//verifica se o simbolo é igual ao estado de tranição
                         if ((aut.getIniciais().equals(t.estado1.get(i).get(2)))) {
                             aut.setIniciais(t.estado1.get(i).get(2));
                             i--;
                         } else {
-                            //gambiarra
+                            
                             aut.setIniciais(t.estado1.get(i).get(2));
                         }
                         aux++;
